@@ -21,6 +21,16 @@ return {
         end,
     },
     {
+        "ray-x/lsp_signature.nvim",
+        event = "InsertEnter",
+        opts = {
+            bind = true,
+            handler_opts = {
+                border = "rounded",
+            },
+        },
+    },
+    {
         "mfussenegger/nvim-dap",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
