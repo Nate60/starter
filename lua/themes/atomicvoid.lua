@@ -37,19 +37,19 @@ local M = {
     },
     base_16 = {
         base00 = "#000000", --background
-        base01 = "#ffffff", 
-        base02 = "#9dad9d", --highlighting
+        base01 = "#ffffff",
+        base02 = "#3d3d3d", --highlighting
         base03 = "#88a8a8",
         base04 = "#ffffff",
-        base05 = "#afafbd", --operators
+        base05 = "#11ffff", --operators
         base06 = "#ffffff",
         base07 = "#ffffff",
         base08 = "#aadf99", --fields
-        base09 = "#88aaff", --variables
+        base09 = "#a8baff", --variables
         base0A = "#22aa44", -- annotations,
-        base0B = "#77dfdf", -- strings
-        base0C = "#adcdcd", -- brackets
-        base0D = "#11aafb", -- functions
+        base0B = "#77ffff", -- strings
+        base0C = "#aaff00", -- brackets
+        base0D = "#31ddff", -- functions
         base0E = "#77df77", -- keywords
         base0F = "#998877",
     },
