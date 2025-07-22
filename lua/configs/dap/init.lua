@@ -3,5 +3,5 @@ local dap = require "dap"
 dap.adapters.cppdbg = {
     id = "cppdbg",
     type = "executable",
-    command = "/home/sev/Documents/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7",
+    command = vim.fn.expand("$HOME/Documents/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7"),
 }
