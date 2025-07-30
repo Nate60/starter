@@ -1,7 +1,18 @@
 local dap = require "dap"
--- require("configs.dap.ui")
-dap.adapters.cppdbg = {
-    id = "cppdbg",
+dap.adapters.gdb = {
     type = "executable",
-    command = vim.fn.expand("$HOME/Documents/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7"),
+    command = "gdb",
+    args = {"--interpreter=dap", "--eval-command", "set print pretty on"}
+}
+dap.configurations.cpp = {
+    {
+        name = "Launch",
+        type = "gdb",
+        request = "launch",
+        program = function ()
+            return vim.fn.input("Path To Executable (" .. vim.fn.getcwd() .. "):", vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = "${workspaceFolder}",
+        stopAtBeginningOfMainSubprogram = false,
+    },
 }
