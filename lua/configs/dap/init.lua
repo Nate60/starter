@@ -2,17 +2,21 @@ local dap = require "dap"
 dap.adapters.gdb = {
     type = "executable",
     command = "gdb",
-    args = {"--interpreter=dap", "--eval-command", "set print pretty on"}
+    args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
 }
-dap.configurations.cpp = {
-    {
-        name = "Launch",
-        type = "gdb",
+
+vim.api.nvim_create_user_command("RunDebugger", function()
+    local adapters = {}
+    for key, _ in pairs(dap.adapters) do
+        adapters[#adapters + 1] = key
+    end
+    local argString = vim.fn.input "Executable Arguments:"
+    dap.run {
+        type = vim.fn.input("Debugger Type " .. vim.inspect(adapters) .. ": "),
         request = "launch",
-        program = function ()
-            return vim.fn.input("Path To Executable (" .. vim.fn.getcwd() .. "):", vim.fn.getcwd() .. '/', 'file')
-        end,
         cwd = "${workspaceFolder}",
-        stopAtBeginningOfMainSubprogram = false,
-    },
-}
+        runtimeArgs = vim.split(argString, " "),
+        args = vim.split(argString, " "),
+        program = vim.fn.input("Path To Executable (" .. vim.fn.getcwd() .. "): ", vim.fn.getcwd() .. "/", "file"),
+    }
+end, {})
