@@ -32,6 +32,9 @@ M.base46 = {
         St_cwd_icon = {
             bg = "vibrant_green",
         },
+        DiagnosticError = {
+            fg = "baby_pink",
+        },
     },
 }
 
