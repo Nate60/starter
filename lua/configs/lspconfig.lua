@@ -16,6 +16,7 @@ for _, lsp in ipairs(servers) do
     }
 end
 
+vim.lsp.enable(servers)
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,

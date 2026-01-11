@@ -32,7 +32,17 @@ M.base46 = {
         St_cwd_icon = {
             bg = "vibrant_green",
         },
+        DiagnosticError = {
+            fg = "baby_pink",
+        },
     },
 }
+
+-- M.nvdash = { load_on_startup = true }
+-- M.ui = {
+--       tabufline = {
+--          lazyload = false
+--      }
+-- }
 
 return M
