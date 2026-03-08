@@ -6,12 +6,36 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "atomicvoid",
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+    hl_override = {
+        Comment = { italic = true },
+        ["@comment"] = { italic = true },
+        NvimTreeSpecialFile = {
+            fg = "green",
+        },
+        NvimTreeGitNew = {
+            fg = "seablue",
+        },
+        NvimTreeGitDirty = {
+            fg = "nord_blue",
+        },
+        St_InsertMode = {
+            bg = "teal",
+        },
+        St_InsertModeSep = {
+            fg = "teal",
+        },
+        St_cwd_sep = {
+            fg = "vibrant_green",
+        },
+        St_cwd_icon = {
+            bg = "vibrant_green",
+        },
+        DiagnosticError = {
+            fg = "baby_pink",
+        },
+    },
 }
 
 -- M.nvdash = { load_on_startup = true }
