@@ -16,6 +16,7 @@ vim.api.nvim_create_user_command("RunDebugger", function()
         name = "Run Application With Debugger",
         type = vim.fn.input("Debugger Type " .. vim.inspect(adapters) .. ": "),
         request = "launch",
+        cwd = vim.fn.input("Working Directory(" .. vim.fn.getcwd() .. "): ", vim.fn.getcwd() .. "/", "file"),
         cwd = "${workspaceFolder}",
         runtimeArgs = vim.split(argString, " "),
         args = vim.split(argString, " "),
